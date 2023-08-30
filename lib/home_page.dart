@@ -17,10 +17,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 70,
         backgroundColor: Colors.black,
         title: Container(margin: EdgeInsets.all(5), child: Text("Person")),
         leading: Row(
-
           children: [
             Container(
               child: Icon(Icons.arrow_back, size: 24),
@@ -37,31 +37,33 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: [
           Container(
-            child:  Row(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [Icon(Icons.video_call),
+              children: [
+                Icon(Icons.video_call),
                 Icon(Icons.call),
-                Icon(Icons.more_vert),],
-            ) ,
+                Icon(Icons.more_vert),
+              ],
+            ),
           )
-
         ],
       ),
-      body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/images/background.png"),
-                fit: BoxFit.cover)),
-        child: ListView(
+      body: Stack(fit: StackFit.expand, children:
+      [
+        Image.asset("assets/images/background.png",fit: BoxFit.cover,),
+        Column(
           children: [
-            ReceivedMessageScreen(message: "This is my first message"),
-            SentMessageScreen(message: "This is my second message"),
-
-
-
+            Container(
+              child: ListView(
+                children: [
+                  ReceivedMessageScreen(message: "This is my first message"),
+                  SentMessageScreen(message: "This is my second message"),
+                ],
+              ),
+            ),
           ],
         ),
-      ),
+      ]),
     );
   }
 }

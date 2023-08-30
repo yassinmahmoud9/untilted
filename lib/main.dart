@@ -5,9 +5,10 @@ import 'home_page.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home:Scaffold(
-   body:  HomePage(title: "chat" ),
-    )
-  ) );
+    home: HomePage(title: "chat" )
+
+
+   )
+  );
 }
 

@@ -39,12 +39,9 @@ Widget messageTextGroup(String message) {
           child: Container(
             padding: EdgeInsets.all(14),
             decoration: BoxDecoration(
-              color: Colors.cyan,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(18),
-                topRight: Radius.circular(18),
-                bottomLeft: Radius.circular(18),
-                bottomRight: Radius.circular(18),
+              border: Border.all(color:Colors.white ),
+              borderRadius: BorderRadius.all(
+                  Radius.circular(18)
               ),
             ),
             child: Text(
